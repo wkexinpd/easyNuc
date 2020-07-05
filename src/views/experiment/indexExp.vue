@@ -3,9 +3,9 @@
 </template>
 
 <script>
-  export default {
-    name: "indexExp"
-  }
+export default {
+  name: 'indexExp'
+}
 </script>
 
 <style scoped>

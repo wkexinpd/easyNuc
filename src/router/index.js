@@ -14,14 +14,14 @@ export const constantRoutes = [
     component: () => import('../views/error-page/404')
   },
   {
-    path: '/',
+    path: '/'
     // component:
   }
 ]
 
 var easyModule = new Array()
-//实验
-easyModule['indexExp'] = [
+// 实验
+easyModule.indexExp = [
   {
     path: '/indexExp',
     component: () => import('../views/experiment/indexExp'),
@@ -95,8 +95,8 @@ easyModule['indexExp'] = [
     ]
   }
 ]
-//请假
-easyModule['indexLeave'] = [
+// 请假
+easyModule.indexLeave = [
   {
     path: '/indexLeave',
     name: 'indexLeave',
@@ -112,7 +112,7 @@ easyModule['indexLeave'] = [
         meta: {
           title: '首页',
           icon: '',
-          roles: [2,3]
+          roles: [2, 3]
         }
       },
       {
@@ -125,7 +125,7 @@ easyModule['indexLeave'] = [
             meta: {
               title: '权限管理',
               icon: '',
-              roles: [2,3]
+              roles: [2, 3]
             }
           },
           {
@@ -134,7 +134,7 @@ easyModule['indexLeave'] = [
             meta: {
               title: '人员管理',
               icon: '',
-              roles: [2,3]
+              roles: [2, 3]
             }
           },
           {
@@ -143,7 +143,7 @@ easyModule['indexLeave'] = [
             meta: {
               title: '学生管理',
               icon: '',
-              roles: [2,3]
+              roles: [2, 3]
             }
           },
           {
@@ -152,13 +152,13 @@ easyModule['indexLeave'] = [
             meta: {
               title: '班主任管理',
               icon: '',
-              roles: [2,3]
+              roles: [2, 3]
             }
-          },
+          }
         ],
         meta: {
           title: '请假管理',
-          roles: [2,3]
+          roles: [2, 3]
         }
       },
       {
@@ -167,13 +167,13 @@ easyModule['indexLeave'] = [
         meta: {
           title: '个人中心',
           icon: '',
-          roles: [0,1,2,3]
+          roles: [0, 1, 2, 3]
         }
       },
       {
         path: '/leaveManage',
         redirect: '/leaveManage/submitLeave',
-        children:[
+        children: [
           {
             path: '/leaveManage/submitLeave',
             component: () => import('../views/leave/leaveManage/submitLeave'),
@@ -216,13 +216,13 @@ easyModule['indexLeave'] = [
           icon: '',
           roles: [0]
         }
-      },
+      }
 
     ]
-  },
+  }
 ]
-//签到
-easyModule['indexRegister']=[]
+// 签到
+easyModule.indexRegister = []
 export const asyncRoutes = easyModule
 
 const createRouter = () => new VueRouter({
@@ -232,7 +232,7 @@ const createRouter = () => new VueRouter({
 
 const router = createRouter()
 
-export function resetRouter() {
+export function resetRouter () {
   const newRouter = createRouter()
   router.matcher = newRouter.matcher
 }

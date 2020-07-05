@@ -1,6 +1,6 @@
 import axios from 'axios'
-import { MessageBox,Message } from "element-ui"
-import {getToken} from "./auth";
+import { MessageBox, Message } from 'element-ui'
+import { getToken } from './auth'
 import store from '../store'
 
 const service = axios.create({
@@ -10,8 +10,8 @@ const service = axios.create({
 
 service.interceptors.request.use(
   config => {
-    if(store.getters.token) {
-      config.headers['Authorization'] = `Bearer ${getToken()}`
+    if (store.getters.token) {
+      config.headers.Authorization = `Bearer ${getToken()}`
     }
     return config
   },
@@ -24,16 +24,16 @@ service.interceptors.request.use(
 service.interceptors.response.use(
   response => {
     const res = response.data
-    console.log(res);
-    if(res.status !== 200){
+    console.log(res)
+    if (res.status !== 200) {
       Message({
         message: res.msg || '请求失败',
         type: 'error',
-        duration: 5*1000
+        duration: 5 * 1000
       })
       return Promise.reject(new Error(res.message || 'Error'))
-    }else{
-      console.log(res);
+    } else {
+      console.log(res)
       return res
     }
   },
@@ -43,7 +43,7 @@ service.interceptors.response.use(
     Message({
       message: msg || '请求失败',
       type: 'error',
-      duration: 5*1000
+      duration: 5 * 1000
     })
     return Promise.reject(error)
   }

@@ -3,9 +3,9 @@
 </template>
 
 <script>
-  export default {
-    name: "submitLeave"
-  }
+export default {
+  name: 'submitLeave'
+}
 </script>
 
 <style scoped>

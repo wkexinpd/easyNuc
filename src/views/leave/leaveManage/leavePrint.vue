@@ -3,9 +3,9 @@
 </template>
 
 <script>
-  export default {
-    name: "leavePrint"
-  }
+export default {
+  name: 'leavePrint'
+}
 </script>
 
 <style scoped>

@@ -47,88 +47,88 @@
   </div>
 </template>
 <script>
-  import SocialSign from './components/SocialSignin'
-  export default {
-    name: "Login",
-    components: { SocialSign },
-    data() {
-      const validatePassword = (rule, value, callback) => {
-        if(value.length < 6){
-          callback(new Error('密码长度最少6位'))
-        }else{
-          callback()
-        }
+import SocialSign from './components/SocialSignin'
+export default {
+  name: 'Login',
+  components: { SocialSign },
+  data () {
+    const validatePassword = (rule, value, callback) => {
+      if (value.length < 6) {
+        callback(new Error('密码长度最少6位'))
+      } else {
+        callback()
       }
-      return {
-        loginForm: {
-          userNum: '',
-          password: ''
-        },
-        loginRules: {
-          userNum: [{ required: true, trigger: 'blur' }],
-          password: [{ required: true, trigger: 'blur', validator: validatePassword }]
-        },
-        capsTooltip: false,
-        passwordType: 'password',
-        showDialog: false,
-        loading: false,
-        redirect: undefined,
-        otherQuery: {}
-      }
-    },
-    watch: {
-      $route: {
-        handler: function (route) {
-          console.log(route)
-          const query = route.query
-          if (query) {
-            this.redirect = query.redirect
-            this.otherQuery = this.getOtherQuery(query)
-          }
-        },
-        immediate: true
-      }
-    },
-    mounted() {
-      if(this.loginForm.userNum===''){
-        this.$refs.userNum.focus()
-      }else if (this.loginForm.password===''){
-        this.$refs.password.focus()
-      }
-    },
-    methods: {
-      checkCapslock(e){
-        const { key } = e
-        this.capsTooltip = key && key.length === 1 && (key >= 'A' && key <= 'Z')
+    }
+    return {
+      loginForm: {
+        userNum: '',
+        password: ''
       },
-      handleLogin(){
-        this.$refs.loginForm.validate(valid => {
-          if(valid) {
-            this.loading = true
-            this.$store.dispatch('user/login',this.loginForm)
-              .then(() => {
-                this.$router.push({ path: this.redirect || '/', query: this.otherQuery })
-                this.loading = false
-              })
+      loginRules: {
+        userNum: [{ required: true, trigger: 'blur' }],
+        password: [{ required: true, trigger: 'blur', validator: validatePassword }]
+      },
+      capsTooltip: false,
+      passwordType: 'password',
+      showDialog: false,
+      loading: false,
+      redirect: undefined,
+      otherQuery: {}
+    }
+  },
+  watch: {
+    $route: {
+      handler: function (route) {
+        console.log(route)
+        const query = route.query
+        if (query) {
+          this.redirect = query.redirect
+          this.otherQuery = this.getOtherQuery(query)
+        }
+      },
+      immediate: true
+    }
+  },
+  mounted () {
+    if (this.loginForm.userNum === '') {
+      this.$refs.userNum.focus()
+    } else if (this.loginForm.password === '') {
+      this.$refs.password.focus()
+    }
+  },
+  methods: {
+    checkCapslock (e) {
+      const { key } = e
+      this.capsTooltip = key && key.length === 1 && (key >= 'A' && key <= 'Z')
+    },
+    handleLogin () {
+      this.$refs.loginForm.validate(valid => {
+        if (valid) {
+          this.loading = true
+          this.$store.dispatch('user/login', this.loginForm)
+            .then(() => {
+              this.$router.push({ path: this.redirect || '/', query: this.otherQuery })
+              this.loading = false
+            })
             .catch(() => {
               this.loading = false
             })
-          }else{
-            console.log('error submit!!')
-            return false
-          }
-        })
-      },
-      getOtherQuery(query){
-        return Object.keys(query).reduce((acc, cur) => {
-          if (cur !== 'redirect') {
-            acc[cur] = query[cur]
-          }
-          return acc
-        }, {})
-      }
+        } else {
+          console.log('error submit!!')
+          return false
+        }
+      })
+    },
+    getOtherQuery (query) {
+      return Object.keys(query).reduce((acc, cur) => {
+        if (cur !== 'redirect') {
+          acc[cur] = query[cur]
+        }
+        return acc
+      }, {})
     }
   }
+}
 </script>
 
 <style lang="scss">

@@ -5,7 +5,7 @@ import {
   FormItem,
   Input,
   Tooltip
-}from 'element-ui'
+} from 'element-ui'
 
 vue.use(Button)
 vue.use(Form)

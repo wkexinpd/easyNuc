@@ -1,6 +1,6 @@
 export default {
-  //提示信息
-  informationPrompt(type, message, duration) {
+  // 提示信息
+  informationPrompt (type, message, duration) {
     this.$message({
       message: message,
       type: type,
@@ -8,8 +8,8 @@ export default {
     })
   },
 
-  //确认信息
-  confirmInfor(message, callback){
+  // 确认信息
+  confirmInfor (message, callback) {
     this.$confirm(message, '提示', {
       confirmButtonText: '确认',
       cancelButtonText: '取消',

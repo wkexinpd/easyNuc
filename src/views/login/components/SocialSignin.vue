@@ -13,17 +13,17 @@
 </template>
 
 <script>
-  export default {
-    name: "SocialSignin",
-    methods: {
-      wechatHandleClick(){
+export default {
+  name: 'SocialSignin',
+  methods: {
+    wechatHandleClick () {
 
-      },
-      tencentHandleClick(){
+    },
+    tencentHandleClick () {
 
-      }
     }
   }
+}
 </script>
 
 <style lang="scss" scoped>
