@@ -7,7 +7,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 import './styles/index.scss'
 import './assets/icon/iconfont.css'
 import './assets/icon/icon.css'
-import 'element-ui/lib/theme-chalk/index.css'
+
 import './styles/element-variables.scss'
 import frame from './utils/frame'
 import './permission'

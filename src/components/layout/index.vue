@@ -15,17 +15,17 @@
 </template>
 
 <script>
-  import Sidebar from './component/Sidebar'
-  import Navbar from './component/Navbar'
-  import AppMain from './component/AppMain'
-  export default {
-    name: "Layout",
-    components: {
-      Sidebar,
-      Navbar,
-      AppMain
-    }
+import Sidebar from './component/Sidebar'
+import Navbar from './component/Navbar'
+import AppMain from './component/AppMain'
+export default {
+  name: 'Layout',
+  components: {
+    Sidebar,
+    Navbar,
+    AppMain
   }
+}
 </script>
 
 <style lang="scss" scoped>

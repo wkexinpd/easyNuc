@@ -48,7 +48,7 @@
 </template>
 <script>
 import SocialSign from './components/SocialSignin'
-import store from "../../store";
+import store from '../../store'
 export default {
   name: 'Login',
   components: { SocialSign },

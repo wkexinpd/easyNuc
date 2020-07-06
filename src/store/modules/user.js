@@ -63,10 +63,10 @@ const actions = {
         const { data, model_power } = response
         const { token, lvUserNum, lvUserName, lvUserPhone, roleNum, collage } = data
         const { test, askLeave, register } = model_power
-        sessionStorage.setItem("test",test)
-        sessionStorage.setItem("askLeave",askLeave)
-        sessionStorage.setItem("register",register)
-        sessionStorage.setItem("roleNum",roleNum)
+        sessionStorage.setItem('test', test)
+        sessionStorage.setItem('askLeave', askLeave)
+        sessionStorage.setItem('register', register)
+        sessionStorage.setItem('roleNum', roleNum)
         commit('SET_TOKEN', token)
         setToken(token)
         commit('SET_USERNUM', lvUserNum)
@@ -91,10 +91,10 @@ const actions = {
         // const register = state.register
         // const roleNum = state.roleNum
         const arr = [
-          { test: sessionStorage.getItem("test") },
-          { askLeave: sessionStorage.getItem("askLeave") },
-          { register: sessionStorage.getItem("register") },
-          { roleNum: sessionStorage.getItem("roleNum") }
+          { test: sessionStorage.getItem('test') },
+          { askLeave: sessionStorage.getItem('askLeave') },
+          { register: sessionStorage.getItem('register') },
+          { roleNum: sessionStorage.getItem('roleNum') }
         ]
         commit('SET_NEWEASYLIST', arr)
         resolve(arr)

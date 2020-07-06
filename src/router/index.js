@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-Vue.use(VueRouter)
-
 import Layout from '../components/layout'
+
+Vue.use(VueRouter)
 
 // 所有权限都能访问的路由
 export const constantRoutes = [
@@ -40,7 +40,7 @@ easyModule.indexExp = [
         meta: {
           title: '实验室管理',
           icon: 'el-icon-s-home',
-          roles: ["2"]
+          roles: ['2']
         }
       },
       {
@@ -49,7 +49,7 @@ easyModule.indexExp = [
         meta: {
           title: '预约管理',
           icon: 'el-icon-s-opportunity',
-          roles: ["2"]
+          roles: ['2']
         }
       },
       {
@@ -58,7 +58,7 @@ easyModule.indexExp = [
         meta: {
           title: '我的实验',
           icon: 'el-icon-user-solid',
-          roles: ["0"]
+          roles: ['0']
         }
       },
       {
@@ -67,7 +67,7 @@ easyModule.indexExp = [
         meta: {
           title: '班级管理',
           icon: 'el-icon-s-order',
-          roles: ["0"]
+          roles: ['0']
         }
       },
       {
@@ -76,7 +76,7 @@ easyModule.indexExp = [
         meta: {
           title: '我的课程',
           icon: 'el-icon-user-solid',
-          roles: ["1"]
+          roles: ['1']
         }
       },
       {
@@ -85,7 +85,7 @@ easyModule.indexExp = [
         meta: {
           title: '预约课程',
           icon: 'el-icon-s-opportunity',
-          roles: ["1"]
+          roles: ['1']
         }
       },
       {
@@ -94,7 +94,7 @@ easyModule.indexExp = [
         meta: {
           title: '预约详情',
           icon: 'el-icon-s-order',
-          roles: ["1"]
+          roles: ['1']
         }
       }
     ]
@@ -118,7 +118,7 @@ easyModule.indexLeave = [
         meta: {
           title: '首页',
           icon: '',
-          roles: ["2", "3"]
+          roles: ['2', '3']
         }
       },
       {
@@ -131,7 +131,7 @@ easyModule.indexLeave = [
             meta: {
               title: '权限管理',
               icon: 'icon-service-authority',
-              roles: ["2", "3"]
+              roles: ['2', '3']
             }
           },
           {
@@ -140,7 +140,7 @@ easyModule.indexLeave = [
             meta: {
               title: '人员管理',
               icon: 'icon-service-authorityPerson',
-              roles: ["2", "3"]
+              roles: ['2', '3']
             }
           },
           {
@@ -149,7 +149,7 @@ easyModule.indexLeave = [
             meta: {
               title: '学生管理',
               icon: 'icon-service-authorityPerson',
-              roles: ["2", "3"]
+              roles: ['2', '3']
             }
           },
           {
@@ -158,13 +158,13 @@ easyModule.indexLeave = [
             meta: {
               title: '班主任管理',
               icon: 'icon-service-authorityPerson',
-              roles: ["2", "3"]
+              roles: ['2', '3']
             }
           }
         ],
         meta: {
           title: '请假管理',
-          roles: ["2", "3"],
+          roles: ['2', '3'],
           icon: 'icon-service-basicSetting'
         }
       },
@@ -174,7 +174,7 @@ easyModule.indexLeave = [
         meta: {
           title: '个人中心',
           icon: 'icon-service-person',
-          roles: ["0", "1", "2", "3"]
+          roles: ['0', '1', '2', '3']
         }
       },
       {
@@ -187,7 +187,7 @@ easyModule.indexLeave = [
             meta: {
               title: '假条提交',
               icon: 'icon-service-commit',
-              roles: ["0"]
+              roles: ['0']
             }
           },
           {
@@ -196,7 +196,7 @@ easyModule.indexLeave = [
             meta: {
               title: '历史消息',
               icon: 'icon-service-history',
-              roles: ["0"]
+              roles: ['0']
             }
           },
           {
@@ -205,7 +205,7 @@ easyModule.indexLeave = [
             meta: {
               title: '请假信息',
               icon: 'icon-service-information',
-              roles: ["0"]
+              roles: ['0']
             }
           },
           {
@@ -214,14 +214,14 @@ easyModule.indexLeave = [
             meta: {
               title: '假条打印',
               icon: 'icon-service-print',
-              roles: ["0"]
+              roles: ['0']
             }
           }
         ],
         meta: {
           title: '请假管理',
           icon: 'icon-service-leave',
-          roles: ["0"]
+          roles: ['0']
         }
       }
 

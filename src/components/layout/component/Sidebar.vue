@@ -18,34 +18,34 @@
 </template>
 
 <script>
-  import variables from '../../../styles/variables.scss'
-  import { mapGetters } from "vuex"
-  import SidebarItem from "./SidebarItem"
-  export default {
-    name: "Sidebar",
-    components: { SidebarItem },
-    computed: {
-      ...mapGetters([
-        'permission_routes'
-      ]),
-      activeMenu() {
-        const route = this.$route
-        const { meta, path } = route
-        if (meta.activeMenu) {
-          return meta.activeMenu
-        }
-        return path
-      },
-      variables() {
-        return variables
-      },
-    },
-    data() {
-      return {
-        isCollapse: false
+import variables from '../../../styles/variables.scss'
+import { mapGetters } from 'vuex'
+import SidebarItem from './SidebarItem'
+export default {
+  name: 'Sidebar',
+  components: { SidebarItem },
+  computed: {
+    ...mapGetters([
+      'permission_routes'
+    ]),
+    activeMenu () {
+      const route = this.$route
+      const { meta, path } = route
+      if (meta.activeMenu) {
+        return meta.activeMenu
       }
+      return path
+    },
+    variables () {
+      return variables
+    }
+  },
+  data () {
+    return {
+      isCollapse: false
     }
   }
+}
 </script>
 
 <style scoped>
