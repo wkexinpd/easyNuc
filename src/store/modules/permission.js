@@ -14,7 +14,7 @@ export function filterAsyncRoutes (routes, role) {
   const res = []
   routes.forEach(route => {
     const tmp = { ...route }
-    console.log(tmp)
+    // console.log(tmp)
     if (hasPermission(role, tmp)) {
       if (tmp.children) {
         tmp.children = filterAsyncRoutes(tmp.children, role)
@@ -42,13 +42,13 @@ const actions = {
     return new Promise(resolve => {
       const accessedRoutes = []
       // if (rol)
-      if (easyList[0].test === 1) {
+      if (easyList[0].test === "1") {
         const arr = filterAsyncRoutes(asyncRoutes.indexExp, easyList[3].roleNum)
         for (let i = 0; i < arr.length; i++) {
           accessedRoutes.push(arr[i])
         }
       }
-      if (easyList[1].askLeave === 1) {
+      if (easyList[1].askLeave === "1") {
         const arr = filterAsyncRoutes(asyncRoutes.indexLeave, easyList[3].roleNum)
         for (let i = 0; i < arr.length; i++) {
           accessedRoutes.push(arr[i])
@@ -58,7 +58,7 @@ const actions = {
       //   let arr = filterAsyncRoutes(asyncRoutes['indexLeave'],easyList[3].roleNum)
       //   accessedRoutes.push(arr[0])
       // }
-      console.log(accessedRoutes)
+      // console.log(accessedRoutes)
       commit('SET_ROUTES', accessedRoutes)
       resolve(accessedRoutes)
     })

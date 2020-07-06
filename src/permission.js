@@ -12,14 +12,16 @@ router.beforeEach(async (to, from, next) => {
       next({ path: '/' })
     } else {
       const hasRoles = store.getters.newEasyList && store.getters.newEasyList.length > 0
+      // console.log(hasRoles);
       if (hasRoles) {
         next()
       } else {
         try {
           const easyList = await store.dispatch('user/getInfo')
+          // console.log(easyList);
           //  动态路由的生成
           const accessRoutes = await store.dispatch('permission/generateRoutes', easyList)
-          console.log(accessRoutes)
+          // console.log(accessRoutes)
           router.addRoutes(accessRoutes)
           next({ ...to, replace: true })
         } catch (error) {

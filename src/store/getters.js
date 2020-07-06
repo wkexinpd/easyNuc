@@ -8,6 +8,7 @@ const getters = {
   test: state => state.user.test,
   askLeave: state => state.user.askLeave,
   register: state => state.user.register,
-  newEasyList: state => state.user.newEasyList
+  newEasyList: state => state.user.newEasyList,
+  permission_routes: state => state.permission.routes
 }
 export default getters

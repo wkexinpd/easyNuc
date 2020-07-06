@@ -59,11 +59,14 @@ const actions = {
     const { userNum, password } = userInfo
     return new Promise((resolve, reject) => {
       login({ lvUserNum: userNum.trim(), lvUserPassword: password }).then(response => {
-        console.log(response)
+        // console.log(response)
         const { data, model_power } = response
         const { token, lvUserNum, lvUserName, lvUserPhone, roleNum, collage } = data
         const { test, askLeave, register } = model_power
-        console.log(response)
+        sessionStorage.setItem("test",test)
+        sessionStorage.setItem("askLeave",askLeave)
+        sessionStorage.setItem("register",register)
+        sessionStorage.setItem("roleNum",roleNum)
         commit('SET_TOKEN', token)
         setToken(token)
         commit('SET_USERNUM', lvUserNum)
@@ -83,15 +86,15 @@ const actions = {
   getInfo ({ commit, state }) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        const test = state.test
-        const askLeave = state.askLeave
-        const register = state.register
-        const roleNum = state.roleNum
+        // const test = state.test
+        // const askLeave = state.askLeave
+        // const register = state.register
+        // const roleNum = state.roleNum
         const arr = [
-          { test: test },
-          { askLeave: askLeave },
-          { register: register },
-          { roleNum: roleNum }
+          { test: sessionStorage.getItem("test") },
+          { askLeave: sessionStorage.getItem("askLeave") },
+          { register: sessionStorage.getItem("register") },
+          { roleNum: sessionStorage.getItem("roleNum") }
         ]
         commit('SET_NEWEASYLIST', arr)
         resolve(arr)

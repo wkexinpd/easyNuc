@@ -24,7 +24,7 @@ service.interceptors.request.use(
 service.interceptors.response.use(
   response => {
     const res = response.data
-    console.log(res)
+    // console.log(res)
     if (res.status !== 200) {
       Message({
         message: res.msg || '请求失败',
@@ -33,7 +33,7 @@ service.interceptors.response.use(
       })
       return Promise.reject(new Error(res.message || 'Error'))
     } else {
-      console.log(res)
+      // console.log(res)
       return res
     }
   },
